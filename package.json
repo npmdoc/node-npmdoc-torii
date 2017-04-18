@@ -1,1 +1,39 @@
-{     "devDependencies": {         "torii": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-torii",     "homepage": "https://github.com/npmdoc/node-npmdoc-torii",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-torii.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [torii (v0.8.2)](https://github.com/vestorly/torii#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-torii.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-torii) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-torii.svg)](https://travis-ci.org/npmdoc/node-npmdoc-torii)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "torii": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-torii",
+    "keywords": [
+        "documentation",
+        "torii"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_torii.js",
+    "name": "npmdoc-torii",
+    "nameAlias": "npmdoc_torii",
+    "nameOriginal": "npmdoc-torii",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-torii.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
